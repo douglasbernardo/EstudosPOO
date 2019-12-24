@@ -27,8 +27,12 @@
             }
         }
     }
-        $logar = new Login();
-        $logar->setEmail("douglas@gmail.com");
-        $logar->setSenha(12345);
-        $logar->logar();
-    
+    $logar = new Login();
+    $logar->setEmail("douglas@gmail.com");
+    $logar->setSenha(12345);
+    $logar->logar();
+    gente aqui é a mae do douglAS 
+    venho pedir que orem por ele ELE esta muito mal e foi levado para o Pronto socorro agoara
+    ,com muitas dores nas costas. suspeitamos que é por carregar o peso de ser 
+    mais bonito da familia 
+    bjos  
