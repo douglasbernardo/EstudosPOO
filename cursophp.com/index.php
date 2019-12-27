@@ -4,7 +4,16 @@
 
         private $email;
         private $senha;
+        private $nome;
 
+        public function __construct($email,$senha,$nome){
+            $this->nome = $nome;
+            $this->setEmail($email);
+            $this->setSenha($senha);
+        }
+
+        //metodos getters e setters
+        
         public function getsenha(){
             return $this->senha;
         }
@@ -27,7 +36,5 @@
             }
         }
     }
-    $logar = new Login();
-    $logar->setEmail("douglas@gmail.com");
-    $logar->setSenha(12345);
+    $logar = new Login("douglas@gmail.com","12345","Douglas");
     $logar->logar();
