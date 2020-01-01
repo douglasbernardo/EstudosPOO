@@ -4,11 +4,11 @@ require "classes/produtos.php";
 require "models/produtos.php";
 
 
-use models\Produto;
+use models\Produto as ProductClass;
 
 use classes\Produto as ProductModel;
 
-$produto = new Produto();
+$produto = new ProductClass;
 $produto->mostrarDetalhes();
 
 echo "<br>";
