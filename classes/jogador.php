@@ -1,15 +1,14 @@
 <?php 
 
-
-
 class Jogador{
     public $nome;
     public $preco;
     public $posicao;
 
     public function Apresentarjogador(){
-        echo " Jogador: " .$this->nome;
-        echo " Posição :" .$this->getPosicao();
+        echo " Jogador : " .$this->nome;
+        echo " Posição : " .$this->getPosicao();
+        echo "Preço do jogador : " .$this->preco;
     }
 
     public function __construct(string $nome, $posicao,$preco){
@@ -47,8 +46,7 @@ class Jogador{
     }
 }
 
-
-    $jogador = New Jogador("Gabigol","Atacante","40000000");
-    $jogador->Apresentarjogador();
-    echo "<hr>";
-    $jogador->Comprar();
+$jogador = New Jogador("Gabigol","Atacante","80.000.000");
+$jogador->Apresentarjogador();
+echo "<hr>";
+$jogador->Comprar();
