@@ -3,15 +3,16 @@
 
 
 class Jogador{
-    private $nome;
-    private $preco;
-    private $posicao;
+    public $nome;
+    public $preco;
+    public $posicao;
 
     public function Apresentarjogador(){
-        echo " Jogador " .$this->nome. " esta sendo apresentado";
+        echo " Jogador: " .$this->nome;
+        echo " Posição :" .$this->getPosicao();
     }
 
-    public function __construct(string $nome, $posicao, $preco){
+    public function __construct(string $nome, $posicao,$preco){
         $this->nome = $nome;
         $this->posição = $posicao;
         $this->setPreco($preco);
@@ -37,17 +38,17 @@ class Jogador{
     }
 
     public function Comprar(){
-        if($this->preco >= "50.000.00"){
+        if($this->preco >= "5000000"){
             echo "Jogador " .$this->nome. " esta muito caro";
         }
         else{
-            echo "Jogador bom";
+            echo "Jogador esta com preço bom";
         }
     }
 }
 
 
-    $jogador = New Jogador("Gabigol","30.000.00","Atacante");
+    $jogador = New Jogador("Gabigol","Atacante","40000000");
     $jogador->Apresentarjogador();
     echo "<hr>";
     $jogador->Comprar();
