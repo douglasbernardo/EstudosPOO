@@ -53,7 +53,7 @@ class Jogador{
     }
 }
 
-$jogador = New Jogador("Van dijk","Atacante","50.000.000");
+$jogador = New Jogador("Van dijk","Zagueiro","30.000.000");
 $jogador->Apresentarjogador();
 echo "<hr>";
 $jogador->Comprar();
