@@ -1,43 +1,50 @@
 <?php 
 
 class Jogador{
-    public $nome;
-    public $preco;
-    public $posicao;
+    private $nome;
+    private $posicao;
+    private $preco;
 
     public function Apresentarjogador(){
-        echo " Jogador : " .$this->nome;
-        echo " Posição : " .$this->getPosicao();
+        echo " Jogador : " .$this->nome."<br>";
+        echo " Posição : " .$this->getPosicao()."<br>";
         echo "Preço do jogador : " .$this->preco;
     }
 
-    public function __construct(string $nome, $posicao,$preco){
+    function __construct(string $nome, string $posicao, $preco)
+    {
         $this->nome = $nome;
-        $this->posição = $posicao;
+        $this->posicao = $posicao;
         $this->setPreco($preco);
     }
 
     public function getNome(){
         return $this->nome;
     }
-    public function getPreco(){
-        return $this->preço;
+    public function getPreco()
+    {
+        return $this->preco;
     }
-    public function getPosicao(){
-        return $this->posição;
+    public function getPosicao()
+    {
+        return $this->posicao;
     }
-    public function setNome($n){
+    public function setNome($n)
+    {
         $this->nome = $n;
     }
-    public function setPreco($p){
+    public function setPreco($p)
+    {
         $this->preco = $p;
     }
-    public function setPosicao($m){
+    public function setPosicao($m)
+    {
         $this->posicao = $m;
     }
 
-    public function Comprar(){
-        if($this->preco >= "5000000"){
+    public function Comprar()
+    {
+        if($this->preco >= "50.000.00"){
             echo "Jogador " .$this->nome. " esta muito caro";
         }
         else{
@@ -46,7 +53,7 @@ class Jogador{
     }
 }
 
-$jogador = New Jogador("Gabigol","Atacante","80.000.000");
+$jogador = New Jogador("Van dijk","Atacante","50.000.000");
 $jogador->Apresentarjogador();
 echo "<hr>";
 $jogador->Comprar();
