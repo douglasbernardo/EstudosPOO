@@ -6,12 +6,12 @@ class Jogador{
     private $preco;
 
     public function Apresentarjogador(){
-        echo '<table border= 1>';
-        echo '<tr><td> Jogador : </td></tr>'.self::$nome."<br>";
-        echo '<tr><td> Posição : </td></tr>' .$this->getPosicao()."<br>";
-        echo '<tr><td> Preço do jogador :</tr></td>'.$this->getPreco();
+		echo '<table border= 1>';
+        echo '<tr><td>Jogador: </td><td>'.self::$nome.'</td></tr>' ;
+        echo '<tr><td>Posição: </td><td> '.$this->getPosicao().'</td></tr>';
+        echo '<tr><td>Preço do jogador: </td><td>'.$this->getPreco().'</td></tr>' ;
         echo '</table>';
-    }
+	}
     
     //acessando o metodo privado Comprar dentro do escopo da classe
     public function MostrarCompra(){
@@ -26,7 +26,7 @@ class Jogador{
     }
 
     public function getNome(){
-        return $this->nome;
+        return self::$nome;
     }
     public function getPreco()
     {
@@ -61,15 +61,15 @@ class Jogador{
     }
 }
 
- //herença pegando metodos e atributos daa classe Jogador
+ //herença pegando metodos e atributos da classe Jogador
  class Basquete extends Jogador{
 
-    public static $nome;
+    private $nome;
     private $posicao;
-    protected $preco;
+    private $preco;
 
     public function Apresentarjogador(){
-        echo " Jogador : " .self::$nome."<br>";
+        echo " Jogador : " .$this->getNome()."<br>";
         echo " Posição : " .$this->getPosicao()."<br>";
         echo "Preço do jogador : " .$this->getPreco();
     }
@@ -121,8 +121,12 @@ class Jogador{
     }
  }
  
-
+echo "<h2>Jogador de Futebol</h2>";
 $jogador = New Jogador("Van dijk","Zagueiro","80.000.000");
 $jogador->Apresentarjogador();
+$jogador->MostrarCompra();
+echo "<hr>";
 
-
+$basquete = New Jogador("LeBron James","Ala","30.000.000");
+$basquete->Apresentarjogador();
+$basquete->MostrarCompra();
