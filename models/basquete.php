@@ -1,32 +1,31 @@
-<?php 
+<?php
 
-class Jogador{
-    private static $nome;
+//herença pegando metodos e atributos da classe Jogador
+ class Basquete extends Jogador{
+
+    private $nome;
     private $posicao;
     private $preco;
 
     public function Apresentarjogador(){
-		echo '<table border= 1>';
-        echo '<tr><td>Jogador: </td><td>'.self::$nome.'</td></tr>' ;
-        echo '<tr><td>Posição: </td><td> '.$this->getPosicao().'</td></tr>';
-        echo '<tr><td>Preço do jogador: </td><td>'.$this->getPreco().'</td></tr>' ;
-        echo '</table>';
-	}
-    
-    //acessando o metodo privado Comprar dentro do escopo da classe
+        echo " Jogador : " .$this->getNome()."<br>";
+        echo " Posição : " .$this->getPosicao()."<br>";
+        echo "Preço do jogador : " .$this->getPreco();
+    }
+
     public function MostrarCompra(){
         $this->Comprar();
     }
 
-    public function __construct(string $nome, string $posicao, $preco)
+    function __construct(string $nome, string $posicao, $preco)
     {
-        self::$nome = $nome;
+        $this->nome = $nome;
         $this->posicao = $posicao;
         $this->setPreco($preco);
     }
 
     public function getNome(){
-        return self::$nome;
+        return $this->nome;
     }
     public function getPreco()
     {
@@ -49,14 +48,14 @@ class Jogador{
         $this->posicao = $m;
     }
 
-    //metodo privado sendo acessado dentro do escopo da classe
+    //metodo privado
     private function Comprar()
     {
         if($this->preco >= "50.000.00"){
-            echo "Jogador " .self::$nome. " esta muito caro";
+            echo "Jogador " .$this->nome. " esta muito caro";
         }
         else{
             echo "Jogador esta com preço bom";
         }
     }
-}
+ }
