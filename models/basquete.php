@@ -1,5 +1,8 @@
 <?php
 
+namespace models;
+
+namespace classes;
 //herença pegando metodos e atributos da classe Jogador
  class Basquete extends Jogador{
 

@@ -1,5 +1,9 @@
 <?php
 
+namespace volei;
+
+namespace classes;
+
 class Volei extends Jogador{
     private $nome;
     private $posicao;

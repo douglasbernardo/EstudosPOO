@@ -1,5 +1,7 @@
 <?php 
 
+namespace classes;
+
 class Jogador{
     private static $nome;
     private $posicao;
