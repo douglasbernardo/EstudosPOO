@@ -7,7 +7,7 @@ use models\Produto as ProductClass;
 
 use classes\Produto as ProductModel;
 
-$produto = new ProductClass;
+$produto = new ProductClass();
 $produto->MostrarDetalhes();
 
 echo "<br>";
