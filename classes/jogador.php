@@ -1,24 +1,26 @@
 <?php 
 
 class Jogador{
-    public $nome;
+    private static $nome;
     private $posicao;
-    protected $preco;
+    private $preco;
 
     public function Apresentarjogador(){
-        echo " Jogador : " .$this->nome."<br>";
-        echo " Posição : " .$this->getPosicao()."<br>";
-        echo "Preço do jogador : " .$this->preco;
+        echo '<table border= 1>';
+        echo '<tr><td> Jogador : </td></tr>'.self::$nome."<br>";
+        echo '<tr><td> Posição : </td></tr>' .$this->getPosicao()."<br>";
+        echo '<tr><td> Preço do jogador :</tr></td>'.$this->getPreco();
+        echo '</table>';
     }
     
-    //acessando o metodo privador Comprar
+    //acessando o metodo privado Comprar dentro do escopo da classe
     public function MostrarCompra(){
         $this->Comprar();
     }
 
-    function __construct(string $nome, string $posicao, $preco)
+    public function __construct(string $nome, string $posicao, $preco)
     {
-        $this->nome = $nome;
+        self::$nome = $nome;
         $this->posicao = $posicao;
         $this->setPreco($preco);
     }
@@ -47,11 +49,11 @@ class Jogador{
         $this->posicao = $m;
     }
 
-    //metodo privado
+    //metodo privado sendo acessado dentro do escopo da classe
     private function Comprar()
     {
         if($this->preco >= "50.000.00"){
-            echo "Jogador " .$this->nome. " esta muito caro";
+            echo "Jogador " .self::$nome. " esta muito caro";
         }
         else{
             echo "Jogador esta com preço bom";
@@ -62,14 +64,14 @@ class Jogador{
  //herença pegando metodos e atributos daa classe Jogador
  class Basquete extends Jogador{
 
-    public $nome;
+    public static $nome;
     private $posicao;
     protected $preco;
 
     public function Apresentarjogador(){
-        echo " Jogador : " .$this->nome."<br>";
+        echo " Jogador : " .self::$nome."<br>";
         echo " Posição : " .$this->getPosicao()."<br>";
-        echo "Preço do jogador : " .$this->preco;
+        echo "Preço do jogador : " .$this->getPreco();
     }
 
     public function MostrarCompra(){
@@ -119,11 +121,8 @@ class Jogador{
     }
  }
  
-echo "Jogador de Futebol";
+
 $jogador = New Jogador("Van dijk","Zagueiro","80.000.000");
 $jogador->Apresentarjogador();
-echo "Jogador de Basquete";
-$basquete = new Jogador("LeBron James","Ala","60.000.000");
-$basquete->Apresentarjogador();
-echo "<hr>";
-$jogador->MostrarCompra();
+
+
