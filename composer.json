@@ -1,0 +1,13 @@
+{
+    "name": "estudospoo/composer",
+    "description": "Programa\u0000\u0000o orientada \u0000 objetos",
+    "require": {
+        "dompdf/dompdf": "^0.8.3"
+    },
+    "authors": [
+        {
+            "name": "Douglas Bernardo",
+            "email": "douglasbernardomelo@gmail.com"
+        }
+    ]
+}

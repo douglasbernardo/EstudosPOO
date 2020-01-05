@@ -14,17 +14,11 @@ $jogador = New Jogador("Van dijk","Zagueiro","80.000.000");
 $jogador->Apresentarjogador();
 $jogador->MostrarCompra();
 
-
-
 echo "<hr>";
 echo "<h2>Jogador de Basquete</h2>";
-$basquete = New Jogador("LeBron James","Ala","30.000.000");
+$basquete = New jogador("LeBron James","Ala","30.000.000");
 $basquete->Apresentarjogador();
 $basquete->MostrarCompra();
-
-
-
-
 
 echo "<hr>";
 echo "<h2>Jogador de Volei</h2>";
